@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Application</title>
+</head>
+<body>
+  <button onclick="messages++;displayNodification();">Add</button>
+  <button onclick="
+  if(messages > 0){
+    messages--;
+    if(messages === 0){
+    stopNotification();
+  }
+  }
+  ">Remove</button>
+  <span>Notifications:</span><p class="js-text">App</p>
+  <script>
+    let intervalId;
+    let isdisplay;
+    let messages = 2;
+    displayNodification();
+    const notiText = document.querySelector('.js-text');
+    function displayNodification(){
+      if(isdisplay){
+        return;
+      }
+      isdisplay = true;
+      intervalId = setInterval(function(){
+        if(notiText.innerHTML === 'App'){
+          notiText.innerHTML = `${messages} new messages`;
+        }else{
+          notiText.innerHTML = 'App';
+        }
+      },1000);
+      
+    }
+    function stopNotification(){
+      isdisplay = false;
+      clearInterval(intervalId);
+      notiText.innerHTML = 'App';
+    }
+
+  </script>
+  
+</body>
+</html>

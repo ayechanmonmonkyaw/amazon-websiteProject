@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>12c lesson</title>
+</head>
+<body>
+  <button onclick="
+  finishText();
+    " class="js-start-button">Start</button>
+  <script>
+    function finishText(){
+      setTimeout(function(){
+      const ButtonElement = document.querySelector('.js-start-button');
+      ButtonElement.innerHTML = 'Loading...';
+    }, 1000);
+    setTimeout(function(){
+      const ButtonElement = document.querySelector('.js-start-button');
+      ButtonElement.innerHTML = 'Finished!';
+    }, 2000);
+    }
+
+  </script>
+</body>
+</html>

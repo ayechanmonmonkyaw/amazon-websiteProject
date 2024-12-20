@@ -1,0 +1,32 @@
+body{
+  background-color: black;
+  color: white;
+}
+.img-input{
+  background-color: transparent;
+  border: none;
+}
+.img-img{
+  height: 70px;
+  border-radius: 50px;
+}
+.result{
+  font-size: 20px;
+  font-weight: bold;
+}
+.reset-button,
+.auto-play-button{
+  padding: 12px 14px;
+  font-size: 15px;
+  font-weight: 200;
+  border: none;
+  border-radius: 15px;
+  color: white;
+  cursor: pointer;
+}
+.reset-button{
+  background-color: darkred;
+}
+.auto-play-button{
+  background-color: green;
+}

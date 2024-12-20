@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fahrenheit-Celsius</title>
+</head>
+<body>
+  <script>
+    convertNumber(25, 'C');
+    convertNumber(86, 'F');
+    let num;
+    let unit = '';
+    function convertNumber(num , unit){
+        let ans;
+        if(unit === 'C'){
+          convertToFahrenheit(num);
+        } else if(unit === 'F'){
+          convertToCelsius(num);
+        }
+    }
+    function convertToFahrenheit(celsius){
+        let ans;
+        ans = (celsius * 9/5) + 32;
+        console.log(`${ans} F`);
+    }
+    function convertToCelsius(fahrenheit){
+      let ans;
+      ans = (fahrenheit - 32) * 5/9;
+      console.log(`${ans} C`);
+    }
+  </script>
+</body>
+</html>

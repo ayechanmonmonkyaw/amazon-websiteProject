@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>App</title>
+</head>
+<body>
+  <button class="js-add-btn" onclick="
+  messages++;
+  displayNoti();">Add</button>
+  <button class="js-remove-btn" onclick="
+  if(messages > 0){
+    messages--;
+    if(messages === 0){
+      stopNoti();
+    }
+  }
+  ">Remove</button>
+  <script>
+    let messages = 2;
+    let intervalId;
+    let isDisplay;
+    displayNoti();
+    // const addButton = document.querySelector('.js-add-btn');
+    // const removeButton = document.querySelector('.js-remove-btn');
+      function displayNoti(){
+        if(isDisplay){
+        return;
+      }
+      isDisplay = true;
+      intervalId = setInterval(function(){
+        if(document.title === 'App'){
+          document.title = `(${messages}) new messages`;
+        }
+        else{
+          document.title = 'App';
+        }
+      }, 1000);
+      }
+      function stopNoti(){
+        isDisplay = false;
+        clearInterval(intervalId);
+        document.title = 'App';
+
+      }
+
+  </script>
+  
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>10 Lesson</title>
+  <style>
+    .btn{
+      padding: 12px 14px;
+      border: none;
+      font-size: 20px;
+      border-radius: 20px;
+      cursor: pointer;
+    }
+    .gaming{
+      background-color: rgb(199, 125, 42);
+    }
+    .gamingclicked{
+      background-color: rgb(22, 13, 1);
+      color: white;
+    }
+  </style>
+</head>
+<body>
+  <button onclick="
+  gameButton()" class="btn js-gaming gaming">Gaming
+  </button>
+  <script>
+    const gamingButton = document.querySelector('.js-gaming');
+    function gameButton(){
+      if(gamingButton.classList.contains('gamingclicked')){
+        gamingButton.classList.remove('gamingclicked');
+      }else{
+        gamingButton.classList.add('gamingclicked');
+      }
+    }
+  </script>
+</body>
+</html>

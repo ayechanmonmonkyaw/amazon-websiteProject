@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lesson 7</title>
+</head>
+<body>
+  <script>
+    greet('Simon');
+    greet('David');
+    greet('Liam');
+    greet();
+    greet();
+    greet();
+    greet('Luffy');
+    let name = '';
+    function greet(name){
+      if(name){
+        console.log(`Hello ${name}!`);
+      }
+      else if(!name){
+        console.log('Hello, there!');
+      }
+    }
+  </script>
+</body>
+</html>

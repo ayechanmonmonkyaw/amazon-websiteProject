@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DOM Project</title>
+  <style>
+    body{
+      font-family: Arial, Helvetica, sans-serif;
+    }
+    .subscribe-button{
+      background-color: black;
+      color: white;
+      border: none;
+      padding: 10px 14px;
+      font-size: 18px;
+      border-radius: 20px;
+      cursor: pointer;
+    }
+    .js-subscribed{
+      background-color: rgb(6, 114, 34);
+    }
+    .input-cost{
+      border: 1px solid;
+      font-size: 16px;
+      padding: 8px 12px;
+      border-radius: 10px;
+    }
+    .calculate-button{
+      background-color: rgb(187, 124, 41);
+      padding: 10px 14px;
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <p>AyeTubeSubscribe</p>
+  <button onclick="
+  subscribe();
+  " class="js-button subscribe-button">
+  Subscribe</button>
+  
+  <p>Amazon Shop</p>
+  <p>Under $40 - $10 Shipping</p>
+  <p>Over $40 - FREE Shipping</p>
+  <input placeholder="Cost of order" class="js-input-cost input-cost" onkeydown="
+    handleCostKeydown(event);
+  ">
+  <button onclick="
+    calculateTotalCost();
+  " class="calculate-button">Calculate</button>
+  <p class="js-total-cost"></p>
+  <script>
+    function subscribe(){
+      const buttonElement = document.querySelector('.js-button');
+      if(buttonElement.innerText === ('Subscribe')){
+        buttonElement.innerHTML = 'Subscribed'
+        buttonElement.classList.add('js-subscribed');
+      }else{
+        buttonElement.innerHTML = 'Subscribe'
+        buttonElement.classList.remove('js-subscribed');
+      }
+
+    }
+    function handleCostKeydown(event){
+      if(event.key === 'Enter'){
+      calculateTotalCost();
+    }
+    }
+    function calculateTotalCost(){
+        const costElement = document.querySelector('.js-input-cost');
+        let cost = Number(costElement.value);
+        if(!cost){
+          document.querySelector('.js-total-cost').innerHTML = 'Please fill cost';
+        }else if(cost < 40){
+          cost = cost + 10;
+          document.querySelector('.js-total-cost').innerHTML = `Total: $${cost}`;
+        }else{
+          document.querySelector('.js-total-cost').innerHTML = `Free shipping, Total: $ ${cost}`;
+        }
+    }
+  </script>
+</body>
+</html>
